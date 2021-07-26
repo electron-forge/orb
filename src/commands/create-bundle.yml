@@ -1,0 +1,18 @@
+description: >
+  Customizes, rebuilds any native modules, and bundles an Electron app that uses Electron Forge.
+parameters:
+  pkg-manager:
+    default: npm
+    description: The Node.js package manager to run the npm scripts with
+    enum:
+      - npm
+      - yarn
+    type: enum
+steps:
+  - run:
+      name: Package Electron app
+      command: << parameters.pkg-manager >> run package
+  - persist_to_workspace:
+      root: out
+      paths:
+        - .

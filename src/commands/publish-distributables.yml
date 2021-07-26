@@ -1,0 +1,19 @@
+description: Publishes Electron app distributables created via Electron Forge
+parameters:
+  pkg-manager:
+    default: npm
+    description: The Node.js package manager to run the npm scripts with
+    enum:
+      - npm
+      - yarn
+    type: enum
+  publishers:
+    default: "@electron-forge/publisher-github"
+    description: Comma-separated deployment targets
+    type: string
+steps:
+  - attach_workspace:
+      at: out
+  - run:
+      name: Publish to GitHub
+      command: << parameters.pkg-manager >> run publish --from-dry-run --target=<< parameters.publishers >>

@@ -1,0 +1,35 @@
+description: >
+  Creates distributables for an Electron app that uses Electron Forge.
+parameters:
+  maker:
+    description: "The suffix of a first-party Electron Forge maker npm package name. For example, for `@electron-forge/maker-squirrel`, the value would be `squirrel`."
+    type: string
+  pkg-manager:
+    default: npm
+    description: The Node.js package manager to run the npm scripts with
+    enum:
+      - npm
+      - yarn
+    type: enum
+  shell:
+    default: bash
+    description: "Set this to `bash.exe` for Windows jobs, otherwise just leave the default."
+    type: string
+steps:
+  - run:
+      name: Setup platform dependencies
+      command: << include(scripts/maker_platform_setup.sh) >>
+      shell: << parameters.shell >>
+      environment:
+        MAKER: << parameters.maker >>
+  - attach_workspace:
+      at: out
+  - run:
+      name: Create distributable (<< parameters.maker >>)
+      command: << parameters.pkg-manager >> run publish --dry-run --skip-package --targets=@electron-forge/maker-<< parameters.maker >>
+      shell: << parameters.shell >>
+  - persist_to_workspace:
+      root: out
+      paths:
+        - make
+        - publish-dry-run
