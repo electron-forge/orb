@@ -1,14 +1,10 @@
-# Orb Project Template
+# Electron Forge: CircleCI Orb
 
-[![CircleCI Build Status](https://circleci.com/gh/electron-forge/electron-forge-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/electron-forge/electron-forge-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/electron-forge/electron-forge-orb.svg)](https://circleci.com/orbs/registry/orb/electron-forge/electron-forge-orb) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/electron-forge/electron-forge-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
+[![CircleCI Build Status](https://circleci.com/gh/electron-forge/electron-forge-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/electron-forge/electron-forge-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/electron-forge/electron-forge-orb.svg)](https://circleci.com/orbs/registry/orb/electron-forge/electron-forge-orb) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/electron-forge/electron-forge-orb/main/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
+----
 
-
-A starter template for orb projects. Build, test, and publish orbs automatically on CircleCI with [Orb-Tools](https://circleci.com/orbs/registry/orb/circleci/orb-tools).
-
-Additional READMEs are available in each directory.
-
-
+A CircleCI orb for generating and publishing distributables for Electron Forge-based Electron apps.
 
 ## Resources
 
@@ -36,6 +32,4 @@ Example: `[semver:major]`
 * Squash and merge. Ensure the semver tag is preserved and entered as a part of the commit message.
 * On merge, after manual approval, the orb will automatically be published to the Orb Registry.
 
-
 For further questions/comments about this or other orbs, visit the Orb Category of [CircleCI Discuss](https://discuss.circleci.com/c/orbs).
-
